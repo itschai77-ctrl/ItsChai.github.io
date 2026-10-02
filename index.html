@@ -1,130 +1,331 @@
-
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ItsChai | My World</title>
+    <title>Chai's Archive</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+    <style>
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: #070b16;
-  color: #e8edff;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-.profile {
-  width: 100%;
-  max-width: 430px;
-  padding: 35px 25px;
-  text-align: center;
-  background: #101a30;
-  border: 1px solid #263c65;
-  border-radius: 22px;
-  box-shadow: 0 0 35px #153b7950;
-  animation: appear 1s ease;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.avatar {
-  width: 110px;
-  height: 110px;
-  margin: auto;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #172b55, #496eea);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 42px;
-  box-shadow: 0 0 25px #456bdf70;
-}
+        body {
+            margin: 0;
+            background: #050814;
+            color: #e8efff;
+            font-family: Arial, sans-serif;
+        }
 
-h1 {
-  margin-bottom: 8px;
-  color: #a9c2ff;
-}
+        /* ===== HEADER ===== */
 
-.subtitle {
-  color: #8c9cbd;
-  font-size: 14px;
-}
+        header {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
 
-.description {
-  line-height: 1.7;
-  margin: 25px 0;
-  color: #cbd6ef;
-}
+            background:
+                radial-gradient(circle at 50% 30%, #162d63 0%, transparent 35%),
+                #050814;
+        }
 
-.link {
-  display: block;
-  padding: 13px;
-  margin-top: 12px;
-  border-radius: 12px;
-  background: #1c3157;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
+        .hero {
+            animation: appear 1.2s ease;
+        }
 
-.link:hover {
-  background: #3459a0;
-  transform: translateY(-3px);
-}
+        .star {
+            font-size: 70px;
+            color: #8fb4ff;
+            text-shadow: 0 0 30px #3e78ff;
+            animation: float 3s ease-in-out infinite;
+        }
 
-footer {
-  margin-top: 28px;
-  color: #7082a8;
-  font-size: 12px;
-}
+        h1 {
+            font-size: 48px;
+            margin: 15px 0 10px;
+            color: #b8ceff;
+            text-shadow: 0 0 20px #315dcc;
+        }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
+        .subtitle {
+            color: #91a4c9;
+            font-size: 17px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 25px;
+
+            border: 1px solid #4169b5;
+            border-radius: 12px;
+
+            color: white;
+            text-decoration: none;
+
+            background: #101c38;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px #315dcc;
+            background: #182b54;
+        }
+
+        /* ===== SECTIONS ===== */
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #a9c4ff;
+            margin-bottom: 40px;
+        }
+
+        .about {
+            text-align: center;
+            color: #b8c4df;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* ===== OC CARDS ===== */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #0c1428;
+            border: 1px solid #1d3765;
+            border-radius: 18px;
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px #1b3c78;
+        }
+
+        .card h3 {
+            color: #9dbbff;
+        }
+
+        .card p {
+            color: #8798ba;
+            line-height: 1.6;
+        }
+
+        /* ===== GALLERY ===== */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .art {
+            height: 180px;
+            border-radius: 15px;
+            background: #0d1830;
+
+            border: 1px solid #1d3765;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #53688e;
+
+            transition: 0.3s;
+        }
+
+        .art:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px #1e4385;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #526483;
+            border-top: 1px solid #101d35;
+        }
+
+        /* ===== ANIMATIONS ===== */
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<div class="profile">
 
-  <div class="avatar">✦</div>
+<header>
 
-  <h1>ItsChai</h1>
+    <div class="hero">
 
-  <div class="subtitle">Welcome to my little world ♡</div>
+        <div class="star">✦</div>
 
-  <div class="description">
-    Привет! Я Chai.
-    <br>
-    Здесь находится мой маленький уголок интернета.
-    <br><br>
-    Люблю рисование, творчество и создание персонажей.
-  </div>
+        <h1>Chai's Archive</h1>
 
-  <a class="link" href="https://t.me/">Telegram</a>
+        <div class="subtitle">
+            Digital Artist · OC Creator · Dreamer
+        </div>
 
-  <a class="link" href="https://youtube.com/">YouTube</a>
+        <a class="button" href="#about">
+            Enter my world
+        </a>
 
-  <footer>© 2026 ItsChai · Made with love</footer>
+    </div>
 
-</div>
+</header>
+
+
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <div class="about">
+
+        Привет! Я Chai ♡
+
+        <br><br>
+
+        Это моё маленькое творческое пространство,
+        где я собираю свои рисунки, оригинальных персонажей
+        и другие проекты.
+
+        <br><br>
+
+        Добро пожаловать в мой мир ✦
+
+    </div>
+
+</section>
+
+
+<section id="ocs">
+
+    <h2>My OCs</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>OC #1</h3>
+
+            <p>
+                Здесь появится описание
+                моего персонажа.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>OC #2</h3>
+
+            <p>
+                Здесь появится описание
+                другого персонажа.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>OC #3</h3>
+
+            <p>
+                Здесь появится ещё один
+                персонаж.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="art">
+
+    <h2>My Art</h2>
+
+    <div class="gallery">
+
+        <div class="art">Artwork 01</div>
+
+        <div class="art">Artwork 02</div>
+
+        <div class="art">Artwork 03</div>
+
+        <div class="art">Artwork 04</div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026 Chai's Archive ✦
+
+</footer>
+
 
 </body>
 </html>
